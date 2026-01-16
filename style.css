@@ -1,0 +1,664 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    color: #333;
+    line-height: 1.6;
+    background-image: url(images/pozadí.jpg);
+    background-repeat: repeat;      
+    background-size: 400px 500px;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #2a2a2a;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: relative;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #2a2a2a;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    border-radius: 10px;
+    font-size: 1rem;
+    max-width: 1400px;
+    margin: 10px auto;
+}
+
+.navbar .text, .navbar .kontakty {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.navbar .text li, .navbar .kontakty li {
+    list-style: none;
+}
+
+.navbar .text li a {
+    text-decoration: none;
+    color: #2a2a2a;
+    font-weight: 600;
+    transition: all 0.4s;
+}
+
+.navbar .text li a:hover {
+    background-color: rgba(22, 36, 49, 0.90);
+    color: white;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.navbar .logo img {
+    height: 60px;
+    max-height: 10vh;
+    margin: 0 40px;
+}
+
+.navbar .kontakty li {
+    font-size: 0.95rem;
+    color: #2a2a2a;
+}
+
+.sluzby .text {
+    margin: 40px auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sluzby .text h1 {
+    color: #2a2a2a;
+    background-color: rgba(255, 255, 255, 0.90);
+    border: 1px solid #2a2a2a;
+    max-width: 300px;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.sluzby .text p {
+    color: #2a2a2a;
+    background-color: rgba(255, 255, 255, 0.90);
+    border: 1px solid #2a2a2a;
+    max-width: 920px;
+    border-radius: 15px;
+    margin: 10px auto 0 auto;
+    padding: 10px;
+}
+
+.sluzby .cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sluzby .cards .card {
+    border: 1px solid #2a2a2a;
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.90);
+}
+
+.sluzby .cards .card a {
+    text-decoration: none;
+}
+
+.sluzby .cards .card img {
+    width: 300px;
+    border-radius: 2px;
+}
+
+.sluzby .cards .card:hover {
+    border: 1px solid #162431;
+    background-color: #162431;
+    border-radius: 1px;
+    transform: translateY(-5px);
+}
+
+.sluzby .cards .card:hover h1 {
+    color: white;
+}
+
+.vyhody {
+    margin-top: 150px;
+    position: relative;
+    padding: 150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.vyhody .obrazek img {
+    padding-top: 150px;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    z-index: 0;
+}
+
+.vyhody .text {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: right;
+    padding-left: 700px;
+    padding-bottom: 100px;
+    font-size: 120%;
+}
+
+.vyhody .text h1 {
+    color: #364553;
+}
+
+.vyhody .text h2 {
+    color: #162431;
+}
+
+.vyhody .text p {
+    color: rgb(42, 42, 42);
+    text-align: right;
+    max-width: 210px;
+    padding-left: 160px;
+}
+
+.footer {
+    background-color: rgba(22, 36, 49, 0.95);
+    color: white;
+    margin-top: auto;
+    font-family: 'Libre Baskerville', serif;
+    width: 100%;
+    padding: 40px 0;
+}
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-text p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.footer-social p {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-social ul {
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-social ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-social ul li a:hover {
+    color: white;
+    font-size: 120%;
+}
+
+.ceník {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+}
+
+.nadpis h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+    margin-left: 0;
+}
+
+.cenik {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px 40px;
+    background: rgba(22, 36, 49, 0.95);
+    padding: 40px 60px;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.polozka {
+    font-size: 20px;
+    align-self: center;
+    color: #ffffff84;
+}
+
+.cena {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    white-space: nowrap;
+    align-self: center;
+    color: white;
+}
+
+.cenik p {
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Formulář */
+.formular-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    width: 70%;
+    margin: 60px auto;
+    padding: 50px;
+}
+
+.formular-container h1 {
+    font-family: 'Playfair Display', serif;
+    color: #2a2a2a;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2a2a2a;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.formular-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #162431;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.formular-container button:hover {
+    background-color: #2a3a4a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(22, 36, 49, 0.3);
+}
+
+/* Galerie */
+.galerie-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.galerie-sekce {
+    margin-bottom: 80px;
+}
+
+.galerie-sekce h1 {
+    font-family: 'Playfair Display', serif;
+    color: #2a2a2a;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.90);
+    border: 1px solid #2a2a2a;
+    border-radius: 15px;
+    padding: 15px;
+    max-width: 300px;
+    margin: 0 auto 40px auto;
+}
+
+.galerie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.galerie-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.90);
+}
+
+.galerie-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+.galerie-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+        width: 100%;
+        padding: 20px;
+        margin: 10px auto;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navbar .text,
+    .navbar .kontakty {
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .navbar .logo img {
+        height: 50px;
+        margin: 10px 0;
+    }
+
+    /* ===== VÝHODY ===== */
+    .vyhody {
+        padding: 40px 20px;
+        margin-top: 60px;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 15px;
+    }
+
+    .vyhody .obrazek {
+        display: none;
+    }
+
+    .vyhody .text {
+        padding: 0;
+        text-align: center;
+        font-size: 100%;
+    }
+
+    .vyhody .text p {
+        max-width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* ===== CENÍK ===== */
+    .ceník {
+        padding: 50px 20px;
+        width: 100%;
+    }
+
+    .cenik {
+        padding: 30px;
+        width: 100%;
+    }
+
+    /* ===== GALERIE ===== */
+    .galerie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .galerie-item img {
+        height: 250px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer-container {
+        width: 100%;
+        padding: 0 20px;
+        gap: 30px;
+    }
+}
+/* Mobil - do 768px */
+@media (max-width: 768px) {
+    body {
+        background-size: 300px 375px;
+    }
+
+    .navbar {
+        width: 70%;
+        padding: 50px;
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .navbar .text {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .navbar .kontakty {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .navbar .logo img {
+        height: 40px;
+    }
+
+    .sluzby .text h1 {
+        max-width: 90%;
+        font-size: 1.5rem;
+    }
+
+    .sluzby .text p {
+        max-width: 90%;
+        font-size: 0.95rem;
+    }
+
+    .sluzby .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sluzby .cards .card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .sluzby .cards .card img {
+        width: 100%;
+    }
+
+    .vyhody {
+        margin-top: 80px;
+        padding: 60px 20px;
+        background-color: rgba(255, 255, 255, 0.90);
+        border-radius: 15px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .vyhody .text {
+        padding-left: 0;
+        padding-bottom: 0;
+        text-align: center;
+        font-size: 90%;
+    }
+
+    .vyhody .text p {
+        max-width: 100%;
+        padding-left: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .vyhody .obrazek {
+        display: none;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .footer-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-text p {
+        font-size: 0.9rem;
+    }
+
+
+    .nadpis h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+        .ceník {
+        padding: 40px 15px;
+    }
+
+    .cenik {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 6px;
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .polozka {
+        font-size: 16px;
+        text-align: left;
+        color: #ffffffcc;
+    }
+
+    .cena {
+        font-size: 16px;
+        text-align: right;
+        font-weight: 700;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .cenik p {
+        margin: 0;
+    }
+    .formular-container {
+    width: 70%;
+    margin: 60px auto;
+    padding: 50px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    .formular-container button {
+        font-size: 16px;
+    }
+
+    .galerie-container {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .galerie-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .galerie-item img {
+        height: 300px;
+    }
+
+    .galerie-sekce h1 {
+        font-size: 1.5rem;
+        max-width: 90%;
+    }
+
+    .galerie-sekce {
+        margin-bottom: 50px;
+    }
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer-container {
+        width: 100%;
+        padding: 0 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
