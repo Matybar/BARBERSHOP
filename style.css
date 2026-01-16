@@ -136,17 +136,14 @@ h1, h2, h3 {
 .vyhody {
     padding: 60px 100px;
     
-    /* ZMĚNA 1: Použijeme jen jednu hodnotu, která platí pro horní a dolní okraj. */
-    /* Boční okraje (50px) jsme odstranili, protože je nepotřebujeme. */
+    /* KROK 1: Toto je jediný správný způsob centrování */
     margin: 80px auto; 
-    max-width: 900px;
+
+    /* KROK 2: ZVĚTŠÍME MAXIMÁLNÍ ŠÍŘKU, ABY BOX NEBYL MALÝ */
+    max-width: 1600px; /* Zvětšeno z 1400px na 1600px, můžete dát i více */
 
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 15px;
-    
-    /* ZMĚNA 2: Tento řádek smažte nebo zakomentujte. */
-    /* max-width: 1400px; */ 
-
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -154,7 +151,6 @@ h1, h2, h3 {
     border: 1px solid #2a2a2a;
 }
 
-/* Zbytek kódu pro .vyhody zůstává stejný */
 .vyhody .obrazek {
     display: none;
 }
@@ -184,7 +180,6 @@ h1, h2, h3 {
     margin: 0 auto;
     text-align: center;
 }
-
 /* --- Patička --- */
 .footer {
     background-color: rgba(22, 36, 49, 0.95);
