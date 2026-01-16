@@ -138,7 +138,8 @@ h1, h2, h3 {
     
     /* ZMĚNA 1: Použijeme jen jednu hodnotu, která platí pro horní a dolní okraj. */
     /* Boční okraje (50px) jsme odstranili, protože je nepotřebujeme. */
-    margin: 80px 20%; 
+    margin: 80px auto; 
+    max-width: 900px;
 
     background-color: rgba(255, 255, 255, 0.90);
     border-radius: 15px;
