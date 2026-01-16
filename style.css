@@ -3,17 +3,19 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
     font-family: 'Libre Baskerville', serif;
     color: #333;
     line-height: 1.6;
-    background-image: url(images/pozadí.jpg);
-    background-repeat: repeat;      
+    background: url(images/pozadí.jpg) repeat;
     background-size: 400px 500px;
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
 }
 
 h1, h2, h3 {
@@ -23,29 +25,29 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
+/* --- Navigace --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
     position: relative;
     z-index: 100;
+    max-width: 1400px;
+    margin: 10px auto;
+    padding: 20px 5%;
     background-color: rgba(255, 255, 255, 0.95);
     color: #2a2a2a;
     box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     border-radius: 10px;
     font-size: 1rem;
-    max-width: 1400px;
-    margin: 10px auto;
 }
 
 .navbar .text, .navbar .kontakty {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-}
-
-.navbar .text li, .navbar .kontakty li {
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
 
@@ -71,34 +73,27 @@ h1, h2, h3 {
 
 .navbar .kontakty li {
     font-size: 0.95rem;
-    color: #2a2a2a;
 }
 
-.sluzby .text {
-    margin: 40px auto 40px auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.sluzby .text h1 {
-    color: #2a2a2a;
+/* --- Společné styly pro sekce s bílým pozadím --- */
+.sluzby .text h1, .sluzby .text p, .galerie-sekce h1 {
     background-color: rgba(255, 255, 255, 0.90);
     border: 1px solid #2a2a2a;
-    max-width: 300px;
     border-radius: 15px;
     margin: 0 auto;
     padding: 10px;
+    max-width: 300px;
 }
 
 .sluzby .text p {
-    color: #2a2a2a;
-    background-color: rgba(255, 255, 255, 0.90);
-    border: 1px solid #2a2a2a;
     max-width: 920px;
-    border-radius: 15px;
-    margin: 10px auto 0 auto;
-    padding: 10px;
+    margin-top: 10px;
+}
+
+/* --- Služby --- */
+.sluzby .text {
+    margin: 40px auto;
+    text-align: center;
 }
 
 .sluzby .cards {
@@ -127,7 +122,7 @@ h1, h2, h3 {
 }
 
 .sluzby .cards .card:hover {
-    border: 1px solid #162431;
+    border-color: #162431;
     background-color: #162431;
     border-radius: 1px;
     transform: translateY(-5px);
@@ -137,26 +132,27 @@ h1, h2, h3 {
     color: white;
 }
 
+/* --- Výhody --- */
 .vyhody {
-    margin-top: 150px;
     position: relative;
-    padding: 150px;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
+    margin-top: 150px;
+    padding: 150px;
     overflow: hidden;
 }
 
 .vyhody .obrazek img {
-    padding-top: 150px;
     position: absolute;
-    top: 50%; 
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
     z-index: 0;
+    padding-top: 150px;
 }
 
 .vyhody .text {
@@ -169,29 +165,24 @@ h1, h2, h3 {
     font-size: 120%;
 }
 
-.vyhody .text h1 {
-    color: #364553;
-}
-
-.vyhody .text h2 {
-    color: #162431;
-}
-
+.vyhody .text h1 { color: #364553; }
+.vyhody .text h2 { color: #162431; }
 .vyhody .text p {
-    color: rgb(42, 42, 42);
+    color: #2a2a2a;
     text-align: right;
     max-width: 210px;
     padding-left: 160px;
 }
 
+/* --- Patička --- */
 .footer {
     background-color: rgba(22, 36, 49, 0.95);
     color: white;
     margin-top: auto;
     font-family: 'Libre Baskerville', serif;
-    width: 100%;
     padding: 40px 0;
 }
+
 .footer-container {
     width: 90%;
     max-width: 1200px;
@@ -203,9 +194,7 @@ h1, h2, h3 {
 }
 
 .footer-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 2rem;
+    font: 700 2rem 'Playfair Display', serif;
     margin-bottom: 20px;
     color: white;
 }
@@ -235,10 +224,10 @@ h1, h2, h3 {
 }
 
 .footer-social ul li a:hover {
-    color: white;
     font-size: 120%;
 }
 
+/* --- Ceník --- */
 .ceník {
     display: flex;
     flex-direction: column;
@@ -252,7 +241,6 @@ h1, h2, h3 {
     font-size: 48px;
     margin-bottom: 40px;
     letter-spacing: 4px;
-    margin-left: 0;
 }
 
 .cenik {
@@ -266,20 +254,13 @@ h1, h2, h3 {
     width: 100%;
 }
 
-.polozka {
+.polozka, .cena {
     font-size: 20px;
     align-self: center;
-    color: #ffffff84;
 }
 
-.cena {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: right;
-    white-space: nowrap;
-    align-self: center;
-    color: white;
-}
+.polozka { color: #ffffff84; }
+.cena { font-weight: bold; text-align: right; white-space: nowrap; color: white; }
 
 .cenik p {
     margin: 0;
@@ -287,17 +268,15 @@ h1, h2, h3 {
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Formulář */
+/* --- Formulář --- */
 .formular-container {
     max-width: 500px;
-    margin: 40px auto;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     width: 70%;
     margin: 60px auto;
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 .formular-container h1 {
@@ -342,9 +321,7 @@ h1, h2, h3 {
     color: white;
     border: none;
     border-radius: 10px;
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
+    font: 700 18px 'Playfair Display', serif;
     cursor: pointer;
     transition: all 0.3s;
     margin-top: 10px;
@@ -356,7 +333,7 @@ h1, h2, h3 {
     box-shadow: 0 4px 12px rgba(22, 36, 49, 0.3);
 }
 
-/* Galerie */
+/* --- Galerie --- */
 .galerie-container {
     max-width: 1200px;
     margin: 40px auto;
@@ -368,15 +345,9 @@ h1, h2, h3 {
 }
 
 .galerie-sekce h1 {
-    font-family: 'Playfair Display', serif;
-    color: #2a2a2a;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.90);
-    border: 1px solid #2a2a2a;
-    border-radius: 15px;
     padding: 15px;
-    max-width: 300px;
-    margin: 0 auto 40px auto;
+    margin-bottom: 40px;
 }
 
 .galerie-grid {
@@ -406,259 +377,99 @@ h1, h2, h3 {
     display: block;
 }
 
+/* --- Media Queries (Responzivní design) --- */
+
+/* Tablet - do 1024px */
 @media (max-width: 1024px) {
-
-    /* ===== NAVBAR ===== */
-    .navbar {
-        width: 100%;
-        padding: 20px;
-        margin: 10px auto;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .navbar .text,
-    .navbar .kontakty {
-        justify-content: center;
-        flex-wrap: wrap;
-        text-align: center;
-    }
-
-    .navbar .logo img {
-        height: 50px;
-        margin: 10px 0;
-    }
-
-    /* ===== VÝHODY ===== */
-    .vyhody {
-        padding: 40px 20px;
-        margin-top: 60px;
-        background-color: rgba(255,255,255,0.9);
-        border-radius: 15px;
-    }
-
-    .vyhody .obrazek {
-        display: none;
-    }
-
-    .vyhody .text {
-        padding: 0;
-        text-align: center;
-        font-size: 100%;
-    }
-
-    .vyhody .text p {
-        max-width: 100%;
-        padding: 0;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    /* ===== CENÍK ===== */
-    .ceník {
-        padding: 50px 20px;
-        width: 100%;
-    }
-
-    .cenik {
-        padding: 30px;
-        width: 100%;
-    }
-
-    /* ===== GALERIE ===== */
-    .galerie-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .galerie-item img {
-        height: 250px;
-    }
-
-    /* ===== FOOTER ===== */
-    .footer-container {
-        width: 100%;
-        padding: 0 20px;
-        gap: 30px;
-    }
+    body { background-size: 350px 437px; }
+    .navbar { flex-direction: column; gap: 1.5rem; max-width: none; margin: 10px 20px; padding: 20px; }
+    .navbar .text, .navbar .kontakty { justify-content: center; gap: 1.5rem; }
+    .navbar .logo img { height: 50px; margin: 10px 0; }
+    .vyhody { padding: 60px 30px; margin-top: 80px; background-color: rgba(255, 255, 255, 0.90); border-radius: 15px; max-width: 90%; margin-left: auto; margin-right: auto; }
+    .vyhody .obrazek { display: none; }
+    .vyhody .text { padding: 0; text-align: center; font-size: 100%; }
+    .vyhody .text p { max-width: 100%; padding: 0; margin: 0 auto; text-align: center; }
+    .ceník { padding: 60px 20px; }
+    .nadpis h1 { font-size: 36px; }
+    .cenik { padding: 35px 45px; gap: 10px 30px; }
+    .formular-container { width: 80%; padding: 40px; margin: 50px auto; }
+    .galerie-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .galerie-item img { height: 250px; }
+    .galerie-sekce { margin-bottom: 60px; }
+    .footer-container { width: 90%; gap: 30px; }
 }
+
 /* Mobil - do 768px */
 @media (max-width: 768px) {
-    body {
-        background-size: 300px 375px;
-    }
+    body { background-size: 300px 375px; }
+    .navbar { flex-direction: column-reverse; gap: 1.5rem; margin: 10px auto; padding: 25px 20px; }
+    .navbar .text, .navbar .kontakty { flex-direction: column; text-align: center; }
+    .navbar .text { gap: 1rem; }
+    .navbar .kontakty { gap: 0.8rem; }
+    .navbar .logo img { height: 45px; margin: 5px 0; }
+    .sluzby .text h1, .sluzby .text p, .galerie-sekce h1 { max-width: 90%; }
+    .sluzby .text h1 { font-size: 1.5rem; }
+    .sluzby .text p { font-size: 0.95rem; }
+    .sluzby .cards { flex-direction: column; align-items: center; }
+    .sluzby .cards .card { width: 90%; max-width: 350px; }
+    .sluzby .cards .card img { width: 100%; }
+    .vyhody { margin-top: 60px; padding: 40px 20px; max-width: 90%; }
+    .vyhody .text { font-size: 95%; }
+    .ceník {
+    padding: 40px 0; /* Snížení postranního paddingu na nulu */
+    width: 100%;
+}
 
-    .navbar {
-        width: 70%;
-        padding: 50px;
-        flex-direction: column-reverse;
-        gap: 1rem;
-    }
+.nadpis h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-left: 0;
+    margin-right: 0;
+}
 
-    .navbar .text {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
+.cenik {
+    grid-template-columns: 1fr;
+    /* Zmenšení paddingu a nastavení maximální šířky */
+    padding: 30px 20px; 
+    gap: 0;
+    max-width: 90%; /* Ceník bude zabírat maximálně 90 % šířky obrazovky */
+    margin: 0 auto; /* Vycentrování na obrazovce */
+}
 
-    .navbar .kontakty {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-    }
+.polozka {
+    font-size: 17px;
+    text-align: left;
+    color: #ffffffcc;
+    padding: 10px 0 5px 0;
+    border-bottom: none;
+}
 
-    .navbar .logo img {
-        height: 40px;
-    }
+.cena {
+    font-size: 18px;
+    text-align: right;
+    font-weight: 700;
+    padding: 5px 0 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
 
-    .sluzby .text h1 {
-        max-width: 90%;
-        font-size: 1.5rem;
-    }
+.cenik p {
+    margin: 0;
+    padding: 0;
+}
 
-    .sluzby .text p {
-        max-width: 90%;
-        font-size: 0.95rem;
-    }
-
-    .sluzby .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .sluzby .cards .card {
-        width: 90%;
-        max-width: 350px;
-    }
-
-    .sluzby .cards .card img {
-        width: 100%;
-    }
-
-    .vyhody {
-        margin-top: 80px;
-        padding: 60px 20px;
-        background-color: rgba(255, 255, 255, 0.90);
-        border-radius: 15px;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .vyhody .text {
-        padding-left: 0;
-        padding-bottom: 0;
-        text-align: center;
-        font-size: 90%;
-    }
-
-    .vyhody .text p {
-        max-width: 100%;
-        padding-left: 0;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    .vyhody .obrazek {
-        display: none;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .footer-text h2 {
-        font-size: 1.5rem;
-    }
-
-    .footer-text p {
-        font-size: 0.9rem;
-    }
-
-
-    .nadpis h1 {
-        font-size: 28px;
-        letter-spacing: 2px;
-    }
-
-        .ceník {
-        padding: 40px 15px;
-    }
-
-    .cenik {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 6px;
-        width: 100%;
-        padding: 25px 20px;
-    }
-
-    .polozka {
-        font-size: 16px;
-        text-align: left;
-        color: #ffffffcc;
-    }
-
-    .cena {
-        font-size: 16px;
-        text-align: right;
-        font-weight: 700;
-        padding-bottom: 12px;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .cenik p {
-        margin: 0;
-    }
-    .formular-container {
-    width: 70%;
-    margin: 60px auto;
-    padding: 50px;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="tel"],
-    .form-group textarea {
-        font-size: 16px;
-    }
-
-    .formular-container button {
-        font-size: 16px;
-    }
-
-    .galerie-container {
-        margin: 20px auto;
-        padding: 0 10px;
-    }
-
-    .galerie-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .galerie-item img {
-        height: 300px;
-    }
-
-    .galerie-sekce h1 {
-        font-size: 1.5rem;
-        max-width: 90%;
-    }
-
-    .galerie-sekce {
-        margin-bottom: 50px;
-    }
-
-    .footer {
-        padding: 30px 0;
-    }
-
-    .footer-container {
-        width: 100%;
-        padding: 0 20px;
-        flex-direction: column;
-        gap: 20px;
-    }
+    .formular-container { width: calc(100% - 40px); max-width: 500px; margin: 40px auto; padding: 35px 25px; }
+    .formular-container h1 { font-size: 1.8rem; }
+    .form-group input, .form-group textarea { font-size: 16px; }
+    .formular-container button { font-size: 17px; padding: 14px; }
+    .galerie-container { margin: 30px auto; padding: 0 15px; max-width: 100%; }
+    .galerie-grid { grid-template-columns: 1fr; }
+    .galerie-item img { height: 280px; }
+    .galerie-sekce { margin-bottom: 50px; }
+    .galerie-sekce h1 { font-size: 1.5rem; }
+    .footer { padding: 30px 0; }
+    .footer-container { flex-direction: column; gap: 30px; text-align: center; width: 85%; max-width: 100%; margin: 0 auto; padding: 0 15px; }
+    .footer-text, .footer-social { text-align: center; }
+    .footer-text h2 { font-size: 1.6rem; }
+    .footer-text p { font-size: 0.95rem; }
+    .footer-social ul { justify-content: center; }
 }
