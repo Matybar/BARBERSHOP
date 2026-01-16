@@ -69,6 +69,7 @@ h1, h2, h3 {
     height: 60px;
     max-height: 10vh;
     margin: 0 40px;
+    text-align: center;
 }
 
 .navbar .kontakty li {
@@ -382,7 +383,7 @@ h1, h2, h3 {
 /* Tablet - do 1024px */
 @media (max-width: 1024px) {
     body { background-size: 350px 437px; }
-    .navbar { flex-direction: column; gap: 1.5rem; max-width: none; margin: 10px 20px; padding: 20px; }
+    .navbar { flex-direction: column-reverse; gap: 1.5rem; max-width: none; margin: 10px 20px; padding: 20px; }
     .navbar .text, .navbar .kontakty { justify-content: center; gap: 1.5rem; }
     .navbar .logo img { height: 50px; margin: 10px 0; }
     .vyhody { padding: 60px 30px; margin-top: 80px; background-color: rgba(255, 255, 255, 0.90); border-radius: 15px; max-width: 90%; margin-left: auto; margin-right: auto; }
